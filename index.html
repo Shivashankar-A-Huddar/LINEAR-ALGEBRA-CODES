@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Linear Algebra Lab - Interactive Python programs, installation guide, and notes for Engineering students." />
+    <meta name="keywords" content="linear algebra, python, engineering, vectors, matrices, KVL, KCL, numpy" />
+    <title>Linear Algebra Lab - Python Programs for Engineers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>L</text></svg>" />
+</head>
+
+<body>
+
+    <!-- Progress Bar -->
+    <div id="progress-bar" aria-hidden="true"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a class="nav-logo" href="#hero">
+                <span class="logo-icon" aria-hidden="true">LA</span>
+                <span>LA Lab</span>
+            </a>
+
+            <ul class="nav-links" role="list">
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#notes">Notes</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span id="theme-icon"></span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+        <ul>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#programs">Python Programs</a></li>
+            <li><a href="#notes">Notes</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Engineering Workshop</div>
+            <h1>Linear Algebra Lab<br /><span>Python Programs for Engineers</span></h1>
+            <p>Master vectors, matrices, and circuit laws through interactive Python simulations. Built for Electronics
+                &amp; Communication Engineering students.</p>
+            <div class="hero-cta">
+                <a href="#programs" class="btn btn-primary">Start Learning</a>
+                <a href="#installation" class="btn btn-outline">Setup Guide</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-num">7</span><span class="stat-label">Python Programs</span>
+                </div>
+                <div class="stat-item"><span class="stat-num">7</span><span class="stat-label">Chapters</span></div>
+                <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Free &amp; Open</span>
+                </div>
+                <div class="stat-item"><span class="stat-num">ECE</span><span class="stat-label">Focused</span></div>
+            </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 10l5 5 5-5" />
+            </svg>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- INSTALLATION -->
+    <section id="installation">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Get Started</span>
+                <h2 class="section-title">Installation Guide</h2>
+                <p class="section-desc">Set up Python and all required libraries in under 10 minutes on Windows.</p>
+            </div>
+
+            <div class="install-grid">
+                <!-- Video -->
+                <div class="video-card">
+                    <h3>Installation Walkthrough</h3>
+                    <div class="video-wrapper">
+                        <video id="install-video" controls preload="none" poster=""
+                            aria-label="Python installation tutorial video">
+                            <source src="how_to_install_python_in_windows.mov" type="video/mp4" />
+                            Your browser does not support video. <a href="how_to_install_python_in_windows.mov">Download
+                                the video</a>.
+                        </video>
+                    </div>
+                    <div class="video-btn-row">
+                        <a href="how_to_install_python_in_windows.mov" download class="btn btn-blue btn-sm">Download
+                            Video</a>
+                        <a href="./" class="btn btn-ghost btn-sm">All Files</a>
+                    </div>
+                    <div class="notice notice-info mt-4">
+                        The video shows step-by-step Python installation including pip, NumPy, and Matplotlib.
+                    </div>
+                </div>
+
+                <!-- Steps (from docx guide) -->
+                <div class="steps-card">
+                    <h3>Installation Steps</h3>
+                    <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.8; margin-bottom:18px;">A
+                        detailed step-by-step guide with screenshots is available as a downloadable document. Follow it
+                        to install Python, pip, NumPy, and Matplotlib on your Windows PC.</p>
+                    <a href="../Steps to install python in windows pc.docx" download class="btn btn-blue"
+                        style="width:100%; justify-content:center; margin-bottom:14px;">Download Installation Guide
+                        (.docx)</a>
+                    <div class="notice notice-info mt-4">
+                        The guide covers downloading Python, adding it to PATH, installing pip packages, and running
+                        your first program.
+                    </div>
+                    <div class="notice notice-warn mt-4">
+                        Ensure Python is added to PATH during installation. This is the most common setup mistake.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Hands-On Code</span>
+                <h2 class="section-title">Python Programs</h2>
+                <p class="section-desc">Interactive programs organized by chapter. Select a chapter to view its
+                    programs.</p>
+            </div>
+
+            <!-- Chapter Tabs -->
+            <div class="chapter-tabs" role="tablist" aria-label="Chapter navigation">
+                <button class="chapter-tab active" role="tab" aria-selected="true" data-chapter="1">Chapter 1</button>
+                <button class="chapter-tab" role="tab" aria-selected="false" data-chapter="2">Chapter 2</button>
+                <button class="chapter-tab" role="tab" aria-selected="false" data-chapter="3">Chapter 3</button>
+                <button class="chapter-tab" role="tab" aria-selected="false" data-chapter="4">Chapter 4</button>
+                <button class="chapter-tab" role="tab" aria-selected="false" data-chapter="5">Chapter 5</button>
+                <button class="chapter-tab" role="tab" aria-selected="false" data-chapter="6">Chapter 6</button>
+                <button class="chapter-tab" role="tab" aria-selected="false" data-chapter="7">Chapter 7</button>
+            </div>
+
+            <!-- Chapter Panels -->
+            <div class="chapter-panel active" id="chapter-1" role="tabpanel">
+                <div class="programs-grid" id="programs-grid">
+                    <!-- Programs for Chapter 1 injected by JS -->
+                </div>
+            </div>
+            <div class="chapter-panel" id="chapter-2" role="tabpanel">
+                <div class="chapter-placeholder">
+                    <h3>Chapter 2</h3>
+                    <p>Programs for this chapter will be added soon.</p>
+                </div>
+            </div>
+            <div class="chapter-panel" id="chapter-3" role="tabpanel">
+                <div class="chapter-placeholder">
+                    <h3>Chapter 3</h3>
+                    <p>Programs for this chapter will be added soon.</p>
+                </div>
+            </div>
+            <div class="chapter-panel" id="chapter-4" role="tabpanel">
+                <div class="chapter-placeholder">
+                    <h3>Chapter 4</h3>
+                    <p>Programs for this chapter will be added soon.</p>
+                </div>
+            </div>
+            <div class="chapter-panel" id="chapter-5" role="tabpanel">
+                <div class="chapter-placeholder">
+                    <h3>Chapter 5</h3>
+                    <p>Programs for this chapter will be added soon.</p>
+                </div>
+            </div>
+            <div class="chapter-panel" id="chapter-6" role="tabpanel">
+                <div class="chapter-placeholder">
+                    <h3>Chapter 6</h3>
+                    <p>Programs for this chapter will be added soon.</p>
+                </div>
+            </div>
+            <div class="chapter-panel" id="chapter-7" role="tabpanel">
+                <div class="chapter-placeholder">
+                    <h3>Chapter 7</h3>
+                    <p>Programs for this chapter will be added soon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTES -->
+    <section id="notes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Study Material</span>
+                <h2 class="section-title">Quick Reference Notes</h2>
+                <p class="section-desc">Essential concepts explained clearly for ECE students. Tap any topic to expand.
+                </p>
+            </div>
+
+            <div class="notes-grid">
+
+                <!-- Note 1 -->
+                <div class="note-card">
+                    <div class="note-toggle" role="button" tabindex="0" aria-expanded="false">
+                        <div class="note-toggle-left">
+                            <div class="note-icon blue">S/V</div>
+                            <div>
+                                <div class="note-title">Scalars vs Vectors</div>
+                                <div class="note-subtitle">Magnitude only vs magnitude + direction</div>
+                            </div>
+                        </div>
+                        <svg class="note-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </div>
+                    <div class="note-body">
+                        <h4>What is a Scalar?</h4>
+                        <p>A scalar quantity has <strong>magnitude only</strong>, with no direction. Most electrical
+                            quantities you measure with a multimeter are scalars.</p>
+                        <ul>
+                            <li>Voltage (V), Current (I), Resistance (R), Power (P)</li>
+                            <li>Temperature, Frequency, Capacitance, Energy</li>
+                            <li>Represented as a single number: Q = 5 uC</li>
+                        </ul>
+                        <h4>What is a Vector?</h4>
+                        <p>A vector has both <strong>magnitude AND direction</strong> in space. Critical in EM field
+                            theory and antenna analysis.</p>
+                        <ul>
+                            <li>Electric Field <strong>E</strong>, Magnetic Field <strong>B</strong>, Force
+                                <strong>F</strong>
+                            </li>
+                            <li>Poynting Vector <strong>S</strong>, Current Density <strong>J</strong></li>
+                            <li>Represented as: <strong>v</strong> = [vx, vy] with magnitude |v| = sqrt(vx^2 + vy^2)
+                            </li>
+                        </ul>
+                        <div class="formula-box">
+                            Scalar: Q = 1.5 uC (no direction needed)
+                            Vector: E = [3, 2] V/m, |E| = sqrt(9+4) = 3.6 V/m
+                            Force: F = Q x E (scalar x vector = vector)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note 2 -->
+                <div class="note-card">
+                    <div class="note-toggle" role="button" tabindex="0" aria-expanded="false">
+                        <div class="note-toggle-left">
+                            <div class="note-icon green">V+</div>
+                            <div>
+                                <div class="note-title">Vector Operations</div>
+                                <div class="note-subtitle">Addition, subtraction, dot product, cross product</div>
+                            </div>
+                        </div>
+                        <svg class="note-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </div>
+                    <div class="note-body">
+                        <h4>Vector Addition / Subtraction</h4>
+                        <p>Add or subtract component-wise. The result is always a <strong>vector</strong>.</p>
+                        <div class="formula-box">
+                            A = [1, 2, 3], B = [4, 5, 6]
+                            A + B = [5, 7, 9] (Vector result)
+                            A - B = [-3, -3, -3] (Vector result)
+                            Scalar x A = 2 x [1,2,3] = [2, 4, 6]
+                        </div>
+                        <h4>Dot Product (Scalar result)</h4>
+                        <p>A . B = Ax*Bx + Ay*By. Result is a <strong>scalar</strong>. Used to find angle between
+                            vectors.</p>
+                        <div class="formula-box">
+                            A . B = (1x4) + (2x5) = 4+10 = 14 (Scalar)
+                            cos(theta) = (A.B) / (|A||B|)
+                        </div>
+                        <h4>Cross Product (Vector result)</h4>
+                        <p>A x B gives a vector <strong>perpendicular</strong> to both. Essential in 3D EM fields.</p>
+                    </div>
+                </div>
+
+                <!-- Note 3 -->
+                <div class="note-card">
+                    <div class="note-toggle" role="button" tabindex="0" aria-expanded="false">
+                        <div class="note-toggle-left">
+                            <div class="note-icon orange">KL</div>
+                            <div>
+                                <div class="note-title">Kirchhoff's Laws</div>
+                                <div class="note-subtitle">KVL: Sum(V)=0 | KCL: Sum(I_in) = Sum(I_out)</div>
+                            </div>
+                        </div>
+                        <svg class="note-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </div>
+                    <div class="note-body">
+                        <h4>Kirchhoff's Voltage Law (KVL)</h4>
+                        <p>The algebraic sum of all voltages around any <strong>closed loop</strong> is zero. Energy is
+                            conserved.</p>
+                        <div class="formula-box">
+                            Sum(V) = 0 (around any closed loop)
+                            Vs - V1 - V2 - V3 = 0
+                            I = Vs / (R1 + R2 + R3)
+                            V1 = I*R1, V2 = I*R2, V3 = I*R3
+                        </div>
+                        <h4>Kirchhoff's Current Law (KCL)</h4>
+                        <p>The sum of currents entering a node equals the sum leaving. Charge is conserved.</p>
+                        <div class="formula-box">
+                            Sum(I_in) = Sum(I_out) (at any node)
+                            I1 + I2 = I3 (example node)
+                            Node voltage: Vn = (G1*V1 + G2*V2 + G3*V3) / (G1+G2+G3)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note 4 -->
+                <div class="note-card">
+                    <div class="note-toggle" role="button" tabindex="0" aria-expanded="false">
+                        <div class="note-toggle-left">
+                            <div class="note-icon purple">DS</div>
+                            <div>
+                                <div class="note-title">Discrete Signals</div>
+                                <div class="note-subtitle">Sampling theory and array operations</div>
+                            </div>
+                        </div>
+                        <svg class="note-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </div>
+                    <div class="note-body">
+                        <h4>Discrete vs Continuous Signals</h4>
+                        <p>A <strong>continuous signal</strong> has values at every instant of time. A <strong>discrete
+                                signal</strong> exists only at specific sample points n = 0, 1, 2, ...</p>
+                        <ul>
+                            <li>Discrete signal: x[n] defined at integer indices</li>
+                            <li>Obtained by sampling continuous x(t) at rate fs</li>
+                            <li>Nyquist Theorem: fs >= 2 x fmax to avoid aliasing</li>
+                        </ul>
+                        <h4>Array Operations</h4>
+                        <div class="formula-box">
+                            x1[n] = [4, 7, 2], x2[n] = [2, 3, 7]
+                            Addition: x1 + x2 = [6, 10, 9]
+                            Subtraction: x1 - x2 = [2, 4, -5]
+                            Multiplication: x1 * x2 = [8, 21, 14]
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end notes-grid -->
+        </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Further Learning</span>
+                <h2 class="section-title">External Resources</h2>
+                <p class="section-desc">Curated links to documentation, tutorials, and tools to deepen your
+                    understanding.</p>
+            </div>
+
+            <div class="resources-grid">
+                <a href="https://numpy.org/doc/" target="_blank" rel="noopener noreferrer" class="resource-card">
+                    <div class="resource-icon" style="background:rgba(77,171,74,0.1)">NP</div>
+                    <div class="resource-name">NumPy Documentation</div>
+                    <div class="resource-desc">Official docs for the NumPy library. Arrays, linear algebra, FFT, and
+                        more.</div>
+                    <div class="resource-link">Visit site &rarr;</div>
+                </a>
+                <a href="https://matplotlib.org/stable/tutorials/" target="_blank" rel="noopener noreferrer"
+                    class="resource-card">
+                    <div class="resource-icon" style="background:rgba(37,99,235,0.1)">MPL</div>
+                    <div class="resource-name">Matplotlib Tutorials</div>
+                    <div class="resource-desc">Learn to create static, animated, and interactive visualizations in
+                        Python.</div>
+                    <div class="resource-link">Visit site &rarr;</div>
+                </a>
+                <a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener noreferrer"
+                    class="resource-card">
+                    <div class="resource-icon" style="background:rgba(245,158,11,0.1)">Py</div>
+                    <div class="resource-name">Python Official Tutorial</div>
+                    <div class="resource-desc">The official Python language tutorial, from basics to advanced topics.
+                    </div>
+                    <div class="resource-link">Visit site &rarr;</div>
+                </a>
+                <a href="https://www.khanacademy.org/math/linear-algebra" target="_blank" rel="noopener noreferrer"
+                    class="resource-card">
+                    <div class="resource-icon" style="background:rgba(16,185,129,0.1)">KA</div>
+                    <div class="resource-name">Khan Academy - Linear Algebra</div>
+                    <div class="resource-desc">Free video lessons on vectors, matrix operations, determinants, and
+                        eigenvalues.</div>
+                    <div class="resource-link">Visit site &rarr;</div>
+                </a>
+                <a href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank" rel="noopener noreferrer"
+                    class="resource-card">
+                    <div class="resource-icon" style="background:rgba(139,92,246,0.1)">3B1B</div>
+                    <div class="resource-name">3Blue1Brown - Essence of LA</div>
+                    <div class="resource-desc">Beautiful geometric intuition behind linear algebra. Highly recommended
+                        for visual learners.</div>
+                    <div class="resource-link">Visit site &rarr;</div>
+                </a>
+                <a href="https://www.electronics-tutorials.ws/dccircuits/kirchhoffs-voltage-law.html" target="_blank"
+                    rel="noopener noreferrer" class="resource-card">
+                    <div class="resource-icon" style="background:rgba(239,68,68,0.1)">KL</div>
+                    <div class="resource-name">Kirchhoff's Laws Tutorial</div>
+                    <div class="resource-desc">Clear explanations of KVL and KCL with worked examples for circuit
+                        analysis.</div>
+                    <div class="resource-link">Visit site &rarr;</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-icon" aria-hidden="true">LA</span>
+                        <span>Linear Algebra Lab</span>
+                    </div>
+                    <p>An open educational resource for Electronics &amp; Communication Engineering students. Learn
+                        Python, linear algebra, and circuit theory through interactive code.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Sections</h4>
+                    <ul>
+                        <li><a href="#installation">Installation Guide</a></li>
+                        <li><a href="#programs">Python Programs</a></li>
+                        <li><a href="#notes">Study Notes</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Chapters</h4>
+                    <ul>
+                        <li><a href="#programs" onclick="switchChapter(1)">Ch 1: Basics &amp; Vectors</a></li>
+                        <li><a href="#programs" onclick="switchChapter(2)">Ch 2: Coming Soon</a></li>
+                        <li><a href="#programs" onclick="switchChapter(3)">Ch 3: Coming Soon</a></li>
+                        <li><a href="#programs" onclick="switchChapter(4)">Ch 4: Coming Soon</a></li>
+                        <li><a href="#programs" onclick="switchChapter(5)">Ch 5: Coming Soon</a></li>
+                        <li><a href="#programs" onclick="switchChapter(6)">Ch 6: Coming Soon</a></li>
+                        <li><a href="#programs" onclick="switchChapter(7)">Ch 7: Coming Soon</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2025 Linear Algebra Lab</span>
+                <span>v1.0 &nbsp;|&nbsp; <a href="https://github.com/" target="_blank" rel="noopener">GitHub
+                        Repository</a> &nbsp;|&nbsp; Hosted on GitHub Pages</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top">&uarr;</button>
+
+    <script src="script.js"></script>
+    <script>
+        // ============================================================
+        // CHAPTER TABS
+        // ============================================================
+        function switchChapter(num) {
+            // Update tabs
+            document.querySelectorAll('.chapter-tab').forEach(tab => {
+                const isActive = parseInt(tab.dataset.chapter) === num;
+                tab.classList.toggle('active', isActive);
+                tab.setAttribute('aria-selected', isActive);
+            });
+            // Update panels
+            document.querySelectorAll('.chapter-panel').forEach(panel => {
+                panel.classList.toggle('active', panel.id === `chapter-${num}`);
+            });
+        }
+
+        document.querySelectorAll('.chapter-tab').forEach(tab => {
+            tab.addEventListener('click', () => switchChapter(parseInt(tab.dataset.chapter)));
+        });
+
+        // ============================================================
+        // PROGRAM DATA (Chapter 1)
+        // ============================================================
+        const PROGRAMS = [
+            {
+                id: 'prog-1',
+                num: 'Program 01',
+                title: 'Basic Arithmetic Operations',
+                tags: [['Beginner', ''], ['Python Basics', 'green']],
+                desc: 'Demonstrates fundamental arithmetic in Python: addition and subtraction of two integers. Perfect as a first program to verify your Python installation is working correctly.',
+                file: 'add.py',
+                code: `a = 10
+b = 20
+
+sum_result = a + b
+difference = a - b
+
+print("Sum:", sum_result)
+print("Difference:", difference)
+
+# Output:
+# Sum: 30
+# Difference: -10`,
+                explain: [
+                    'Variables a and b store integer values 10 and 20.',
+                    'Python uses standard + and - operators for arithmetic.',
+                    'print() outputs results to the console.',
+                    'This verifies Python is installed and running correctly.',
+                    'Try changing a and b to any numbers you like!'
+                ]
+            },
+            {
+                id: 'prog-2',
+                num: 'Program 02',
+                title: 'Vector Operations with NumPy',
+                tags: [['Vectors', ''], ['NumPy', 'green'], ['Linear Algebra', 'purple']],
+                desc: 'Performs vector addition, subtraction, and scalar multiplication using NumPy arrays. Fundamental operations in Linear Algebra used throughout ECE, from EM fields to signal processing.',
+                file: 'vector_addition.py',
+                code: `import numpy as np
+
+# Defining vectors
+vector_a = np.array([1, 2, 3])
+vector_b = np.array([4, 5, 6])
+
+# Vector operations
+addition       = np.add(vector_a, vector_b)
+subtraction    = np.subtract(vector_a, vector_b)
+scalar_mult    = 2 * vector_a
+
+# Display results
+print("Vector A:", vector_a)
+print("Vector B:", vector_b)
+print("Addition (A+B):", addition)
+print("Subtraction (A-B):", subtraction)
+print("Scalar x A (2*A):", scalar_mult)
+
+# Output:
+# Vector A: [1 2 3]
+# Vector B: [4 5 6]
+# Addition: [5 7 9]
+# Subtraction: [-3 -3 -3]
+# Scalar Multiplication: [2 4 6]`,
+                explain: [
+                    'numpy.array() creates a mathematical vector from a Python list.',
+                    'np.add() and np.subtract() operate element-wise on both vectors.',
+                    'Scalar multiplication scales every component by the same factor.',
+                    'Result of vector+vector is always a vector; scalar*vector is also a vector.',
+                    'Run: pip install numpy before executing this program.'
+                ]
+            },
+            {
+                id: 'prog-3',
+                num: 'Program 03',
+                title: 'RGB Color Name Picker (GUI)',
+                tags: [['GUI App', 'orange'], ['Tkinter', ''], ['Color Theory', 'green']],
+                desc: 'An interactive Tkinter GUI with three RGB sliders (0 to 255). Move any slider to mix colors. The preview updates in real-time and identifies the closest named color using Euclidean distance in color space.',
+                file: 'RGB.py',
+                code: `import tkinter as tk
+import math
+
+# Color database
+COLOR_DB = {
+    "Red": (255, 0, 0),     "Green": (0, 255, 0),
+    "Blue": (0, 0, 255),    "Yellow": (255, 255, 0),
+    "Cyan": (0, 255, 255),  "Magenta": (255, 0, 255),
+    "Orange": (255, 165, 0),"Purple": (128, 0, 128),
+    "Pink": (255, 192, 203),"White": (255, 255, 255),
+    "Black": (0, 0, 0),     "Gray": (128, 128, 128),
+    "Sky Blue": (135, 206, 235),
+    "Gold": (255, 215, 0),  "Navy": (0, 0, 128),
+}
+
+def closest_color(r, g, b):
+    """Find nearest named color using Euclidean distance."""
+    min_dist = float("inf")
+    closest  = "Unknown"
+    for name, (cr, cg, cb) in COLOR_DB.items():
+        dist = math.sqrt((r-cr)**2 + (g-cg)**2 + (b-cb)**2)
+        if dist < min_dist:
+            min_dist = dist
+            closest  = name
+    return closest
+
+def update_color(event=None):
+    r, g, b = red.get(), green.get(), blue.get()
+    hex_color = f"#{r:02x}{g:02x}{b:02x}"
+    preview.config(bg=hex_color)
+    name = closest_color(r, g, b)
+    label.config(text=f"RGB({r},{g},{b})  HEX:{hex_color}\\nClosest: {name}")
+
+# Build GUI
+root = tk.Tk()
+root.title("RGB Color Name Picker")
+root.geometry("400x350")
+
+red   = tk.IntVar(); green = tk.IntVar(); blue = tk.IntVar()
+
+for text, var in [("Red", red), ("Green", green), ("Blue", blue)]:
+    tk.Label(root, text=text).pack()
+    tk.Scale(root, from_=0, to=255, orient="horizontal",
+             variable=var, command=update_color).pack(fill="x")
+
+preview = tk.Label(root, bg="black", width=40, height=5)
+preview.pack(pady=10)
+label = tk.Label(root, text="")
+label.pack()
+
+update_color()
+root.mainloop()`,
+                explain: [
+                    'Tkinter (tk) is Python\'s built-in GUI library, no extra install needed.',
+                    'IntVar() links a Python variable to a GUI widget. Slider moves update the variable automatically.',
+                    'Euclidean distance in 3D color space finds the perceptually nearest color name.',
+                    'f-strings format RGB values as a 6-digit hex color code (e.g., #ff6600).',
+                    'The entire GUI is event-driven: update_color fires every time any slider moves.'
+                ]
+            },
+            {
+                id: 'prog-4',
+                num: 'Program 04',
+                title: 'Scalar x Vector Visualizer',
+                tags: [['Interactive', 'orange'], ['Matplotlib', ''], ['Vector Ops', 'purple']],
+                desc: 'Side-by-side interactive plots showing (1) Scalar x Vector scaling with live sliders and (2) Vector x Vector dot/cross product. Switch between Dot Product and Cross Product modes using radio buttons.',
+                file: 'sv-v&v.py',
+                code: `import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.widgets import Slider, RadioButtons
+
+COLORS = {
+    'v1': '#1f77b4',   # Blue - Input Vector 1
+    'v2': '#2ca02c',   # Green - Input Vector 2
+    'res': '#9467bd',  # Purple - Positive Result
+    'scalar': '#ff7f0e', # Orange - Scalar
+    'neg': '#d62728',  # Red - Negative Result
+}
+
+class DualVectorVisualizer:
+    def __init__(self):
+        self.fig = plt.figure(figsize=(16, 8))
+        self.fig.canvas.manager.set_window_title("Vector Operations Comparison")
+
+        # Plot areas (left=scalar, right=vector ops)
+        self.ax_left  = self.fig.add_axes([0.05, 0.40, 0.40, 0.50])
+        self.ax_right = self.fig.add_axes([0.55, 0.40, 0.40, 0.50])
+        self.ax_txt_l = self.fig.add_axes([0.05, 0.90, 0.40, 0.08])
+        self.ax_txt_l.axis('off')
+        self.ax_txt_r = self.fig.add_axes([0.55, 0.90, 0.30, 0.08])
+        self.ax_txt_r.axis('off')
+
+        # Mode switch (Dot vs Cross)
+        ax_radio = self.fig.add_axes([0.80, 0.88, 0.15, 0.10])
+        self.radio = RadioButtons(ax_radio, ('Dot Product', 'Cross Product'))
+        self.radio.on_clicked(self.update)
+
+        self.setup_sliders()
+        self.update(None)
+
+    def setup_sliders(self):
+        # Left sliders: Scalar x Vector
+        self.sl_sigma = Slider(self.fig.add_axes([0.1,0.20,0.3,0.03]), 'Scalar', -3,3, 1.5)
+        self.sl_ex    = Slider(self.fig.add_axes([0.1,0.15,0.3,0.03]), 'Vx', -5,5, 2.0)
+        self.sl_ey    = Slider(self.fig.add_axes([0.1,0.10,0.3,0.03]), 'Vy', -5,5, 1.0)
+        # Right sliders: Vector x Vector
+        self.sl_v1x = Slider(self.fig.add_axes([0.6,0.20,0.3,0.03]), 'V1x', -5,5, 3.0)
+        self.sl_v1y = Slider(self.fig.add_axes([0.6,0.15,0.3,0.03]), 'V1y', -5,5, 1.0)
+        self.sl_v2x = Slider(self.fig.add_axes([0.6,0.10,0.3,0.03]), 'V2x', -5,5,-1.0)
+        self.sl_v2y = Slider(self.fig.add_axes([0.6,0.05,0.3,0.03]), 'V2y', -5,5, 3.0)
+        for s in [self.sl_sigma,self.sl_ex,self.sl_ey,
+                  self.sl_v1x,self.sl_v1y,self.sl_v2x,self.sl_v2y]:
+            s.on_changed(self.update)
+
+    def update(self, val):
+        # ... (full implementation in downloadable file)
+        self.fig.canvas.draw_idle()
+
+if __name__ == "__main__":
+    app = DualVectorVisualizer()
+    plt.show()`,
+                explain: [
+                    'Uses matplotlib.widgets for interactive sliders and radio buttons directly in the plot window.',
+                    'Left panel: Scalar x Vector. See how scaling stretches/flips a vector in real time.',
+                    'Right panel: Dot Product returns a SCALAR; Cross Product returns a VECTOR direction.',
+                    'Dot product = 0 means vectors are perpendicular. Key geometric insight.',
+                    'Download the full .py file for the complete implementation with all drawing code.'
+                ]
+            },
+            {
+                id: 'prog-5',
+                num: 'Program 05',
+                title: 'Full Scalar vs Vector Explorer',
+                tags: [['Advanced', 'orange'], ['ECE Quantities', 'purple'], ['Interactive', '']],
+                desc: 'Comprehensive visualization of all ECE scalar and vector quantities on a single dashboard. Includes a Q*E force diagram, scrollable quantity tables, and popup editors. Click "Enter Scalar" or "Enter Vector" to change values live.',
+                file: 'scalar vs vector.py',
+                code: `import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+from matplotlib.widgets import Button
+import tkinter as tk
+
+# ECE Scalar Quantities
+SCALAR_DATA = {
+    "Charge":       {"value": 1.0,  "unit": "uC",  "symbol": "Q"},
+    "Voltage (DC)": {"value": 5.0,  "unit": "V",   "symbol": "V"},
+    "Current (DC)": {"value": 2.3,  "unit": "A",   "symbol": "I"},
+    "Resistance":   {"value": 10.0, "unit": "Ohm", "symbol": "R"},
+    "Power":        {"value": 50.0, "unit": "W",   "symbol": "P"},
+    "Frequency":    {"value": 2.4,  "unit": "GHz", "symbol": "f"},
+}
+
+# ECE Vector Quantities
+VECTOR_DATA = {
+    "Electric Field E":  {"x": 3.0,  "y": 2.0,  "unit": "V/m"},
+    "Magnetic Field B":  {"x": 1.5,  "y": 2.5,  "unit": "T"},
+    "Force F":           {"x": 4.0,  "y": 1.0,  "unit": "N"},
+    "Poynting Vector S": {"x": 2.0,  "y": 3.5,  "unit": "W/m2"},
+    "Current Density J": {"x": 1.0,  "y": -3.5, "unit": "A/m2"},
+}
+
+# F = Q * E  (scalar x vector = vector)
+Q = SCALAR_DATA["Charge"]["value"] / 20.0
+E = VECTOR_DATA["Electric Field E"]
+Fx = Q * E["x"];  Fy = Q * E["y"]
+print(f"Force F = Q * E = [{Fx:.3f}, {Fy:.3f}] N")
+print(f"|F| = {(Fx**2 + Fy**2)**0.5:.3f} N")
+
+# Full interactive dashboard: download the .py file
+# to see the complete Matplotlib + Tkinter implementation`,
+                explain: [
+                    'Demonstrates F = Q * E: Charge (scalar) x Electric Field (vector) = Force (vector).',
+                    'Shows 9 scalar quantities (Charge, Voltage, Current, etc.) on a number line.',
+                    'Shows 9 vector quantities (E, B, F, S, k, J, D...) on a 2D coordinate grid.',
+                    'Popup editors let you change any quantity value and see all plots update live.',
+                    'Download the full file. It is 630+ lines of production-quality scientific Python.'
+                ]
+            },
+            {
+                id: 'prog-6',
+                num: 'Program 06',
+                title: "Kirchhoff's Laws Interactive Simulator",
+                tags: [["KVL / KCL", ''], ["Circuit Analysis", 'green'], ["Advanced", 'orange']],
+                desc: "Two-tab simulator: Tab 1 (KVL) shows a live series circuit diagram, voltage elevation staircase map, and bar charts. Tab 2 (KCL) shows a node junction diagram with real-time current balance. Adjust sliders to see laws verified instantly.",
+                file: 'kvl-kcl.py',
+                code: `"""
+Kirchhoff's Laws Interactive Simulator
+Tab 1: KVL - Series Circuit + Voltage Elevation Map
+Tab 2: KCL - Node Current Junction Balancer
+"""
+import numpy as np
+import tkinter as tk
+from tkinter import ttk
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+
+class KVLTab:
+    """
+    KVL: Sum of voltages around a closed loop = 0
+    Components: Vs (battery) + R1 + R2 + R3 in series
+    """
+    def compute(self, Vs, R1, R2, R3):
+        Rtot   = R1 + R2 + R3
+        I      = Vs / Rtot          # Series current (same everywhere)
+        V1, V2, V3 = I*R1, I*R2, I*R3
+        check  = Vs - V1 - V2 - V3  # Should be 0 (floating point ~0)
+        return I, V1, V2, V3, check
+
+class KCLTab:
+    """
+    KCL: Sum of currents into a node = Sum of currents out
+    Three branches meet at a central node.
+    """
+    def compute(self, V1, V2, V3, R1, R2, R3):
+        G1, G2, G3 = 1/R1, 1/R2, 1/R3
+        Vn  = (G1*V1 + G2*V2 + G3*V3) / (G1+G2+G3)  # Node voltage
+        I1  = (V1 - Vn) / R1
+        I2  = (V2 - Vn) / R2
+        I3  = (V3 - Vn) / R3
+        return Vn, I1, I2, I3
+
+# KVL Example
+kvl = KVLTab()
+I, V1, V2, V3, check = kvl.compute(Vs=12, R1=100, R2=200, R3=150)
+print(f"KVL: I = {I*1000:.2f} mA")
+print(f"     V1={V1:.2f}V, V2={V2:.2f}V, V3={V3:.2f}V")
+print(f"     Check: {check:.6f} V  (should be ~0)")
+
+# KCL Example
+kcl = KCLTab()
+Vn, I1, I2, I3 = kcl.compute(12, -6, 8, 100, 200, 150)
+print(f"KCL: Node V = {Vn:.3f}V")
+print(f"     I1={I1*1e3:.2f}mA, I2={I2*1e3:.2f}mA, I3={I3*1e3:.2f}mA")`,
+                explain: [
+                    'KVL: voltage rises across battery, drops across each resistor. Sum = exactly 0.',
+                    'Series circuit: same current I flows through every component.',
+                    'KCL: Node analysis using conductance G = 1/R to find node voltage Vn.',
+                    'The interactive version draws a live circuit diagram and KVL elevation staircase.',
+                    'The floating-point check result is ~1e-15 (not exactly 0 due to IEEE 754 precision).'
+                ]
+            },
+            {
+                id: 'prog-7',
+                num: 'Program 07',
+                title: 'Discrete Signal Array Operations',
+                tags: [['DSP Basics', 'purple'], ['Signals', ''], ['NumPy', 'green']],
+                desc: 'Enter two discrete sequences x1[n] and x2[n] as comma-separated values. The app instantly computes and plots Addition, Subtraction, and Multiplication as stem (lollipop) plots with labeled sample values. Save your plot as PNG.',
+                file: 'Discrete_Continuous.py',
+                code: `"""
+Discrete Signal Array Operations
+Enter two sequences and visualise:
+Addition, Subtraction, Multiplication
+as stem (lollipop) plots.
+"""
+import numpy as np
+
+def pad_to_same(a, b):
+    """Zero-pad shorter array so lengths match."""
+    diff = len(a) - len(b)
+    if diff > 0:
+        b = np.concatenate([b, np.zeros(diff)])
+    elif diff < 0:
+        a = np.concatenate([a, np.zeros(-diff)])
+    return a, b
+
+# Input sequences (try your own!)
+x1 = np.array([4, 7, 2])
+x2 = np.array([2, 3, 7])
+x1, x2 = pad_to_same(x1, x2)
+
+n = np.arange(len(x1))  # Sample indices: 0, 1, 2, ...
+
+# Operations
+add = x1 + x2    # Element-wise addition
+sub = x1 - x2    # Element-wise subtraction
+mul = x1 * x2    # Element-wise multiplication
+
+# Results
+print(f"x1[n]       = {list(x1.astype(int))}")
+print(f"x2[n]       = {list(x2.astype(int))}")
+print(f"x1+x2       = {list(add.astype(int))}")
+print(f"x1-x2       = {list(sub.astype(int))}")
+print(f"x1*x2       = {list(mul.astype(int))}")
+
+# Output:
+# x1[n]  = [4, 7, 2]
+# x2[n]  = [2, 3, 7]
+# x1+x2  = [6, 10, 9]
+# x1-x2  = [2,  4, -5]
+# x1*x2  = [8, 21, 14]
+
+# GUI version: run Discrete_Continuous.py for interactive plots`,
+                explain: [
+                    'Discrete signals exist only at integer sample indices n = 0, 1, 2, ...',
+                    'Zero-padding makes two arrays the same length before operating on them.',
+                    'All three operations (add, sub, mul) are element-wise. Sample n is paired with sample n.',
+                    'Stem plots (lollipops) are the standard way to visualise discrete-time signals in DSP.',
+                    'The full GUI version lets you type any sequence and see all 5 plots update in real time.'
+                ]
+            }
+        ];
+
+        // ============================================================
+        // Render programs into DOM
+        // ============================================================
+        (function renderPrograms() {
+            const grid = document.getElementById('programs-grid');
+            if (!grid) return;
+
+            PROGRAMS.forEach(prog => {
+                const codeId = `code-${prog.id}`;
+                const tagsHtml = prog.tags.map(([t, cls]) =>
+                    `<span class="tag ${cls}">${t}</span>`).join('');
+                const explainHtml = prog.explain.map(e => `<li>${e}</li>`).join('');
+
+                grid.insertAdjacentHTML('beforeend', `
+<article class="program-card" id="${prog.id}">
+  <div class="program-header">
+    <div class="program-title-row">
+      <div class="program-number">${prog.num}</div>
+      <div class="program-title">${prog.title}</div>
+      <div class="program-tags">${tagsHtml}</div>
+    </div>
+    <div class="program-actions">
+      <a href="${prog.file}"
+         download class="btn btn-ghost btn-sm btn-icon" title="Download ${prog.file}" aria-label="Download ${prog.file}">Download</a>
+    </div>
+  </div>
+  <div class="program-desc">${prog.desc}</div>
+  <div class="code-wrapper">
+    <div class="code-header">
+      <span class="code-lang">Python</span>
+      <div class="code-actions">
+        <button class="btn btn-ghost btn-sm btn-copy" data-target="${codeId}" aria-label="Copy code">Copy</button>
+        <a href="${prog.file}" download
+           class="btn btn-ghost btn-sm" aria-label="Download ${prog.file}">.py</a>
+      </div>
+    </div>
+    <pre class="code-block" id="${codeId}" tabindex="0"><code>${escHtml(prog.code)}</code></pre>
+  </div>
+  <div class="program-expand">
+    <button class="expand-toggle" aria-expanded="false" aria-controls="explain-${prog.id}">
+      See Explanation <span class="expand-arrow">&#x25BC;</span>
+    </button>
+    <div class="expand-body" id="explain-${prog.id}" role="region">
+      <ul>${explainHtml}</ul>
+    </div>
+  </div>
+</article>`);
+            });
+
+            // Re-init copy buttons after injection
+            if (typeof initCopyButtons === 'function') initCopyButtons();
+
+            // Re-init expandables
+            if (typeof initExpandables === 'function') initExpandables();
+
+            // Re-init fade animations
+            document.querySelectorAll('.program-card').forEach(el => {
+                el.classList.add('fade-in-up');
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+                }, { threshold: 0.06 });
+                observer.observe(el);
+            });
+        })();
+
+        function escHtml(str) {
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+    </script>
+</body>
+
+</html>
