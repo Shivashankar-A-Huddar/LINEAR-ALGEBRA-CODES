@@ -29,7 +29,6 @@
             <ul class="nav-links" role="list">
                 <li><a href="#installation">Installation</a></li>
                 <li><a href="#programs">Programs</a></li>
-                <li><a href="#notes">Notes</a></li>
                 <li><a href="#resources">Resources</a></li>
             </ul>
 
@@ -49,7 +48,6 @@
         <ul>
             <li><a href="#installation">Installation</a></li>
             <li><a href="#programs">Python Programs</a></li>
-            <li><a href="#notes">Notes</a></li>
             <li><a href="#resources">Resources</a></li>
         </ul>
     </div>
@@ -98,13 +96,13 @@
                     <div class="video-wrapper">
                         <video id="install-video" controls preload="none" poster=""
                             aria-label="Python installation tutorial video">
-                            <source src="how_to_install_python_in_windows.mp4" type="video/mp4" />
-                            Your browser does not support video. <a href="how_to_install_python_in_windows.mp4">Download
+                            <source src="how_to_install_python_in_windows.mov" type="video/mp4" />
+                            Your browser does not support video. <a href="how_to_install_python_in_windows.mov">Download
                                 the video</a>.
                         </video>
                     </div>
                     <div class="video-btn-row">
-                        <a href="how_to_install_python_in_windows.mp4" download class="btn btn-blue btn-sm">Download
+                        <a href="how_to_install_python_in_windows.mov" download class="btn btn-blue btn-sm">Download
                             Video</a>
                         <a href="./" class="btn btn-ghost btn-sm">All Files</a>
                     </div>
@@ -126,9 +124,7 @@
                         The guide covers downloading Python, adding it to PATH, installing pip packages, and running
                         your first program.
                     </div>
-                    <div class="notice notice-warn mt-4">
-                        Ensure Python is added to PATH during installation. This is the most common setup mistake.
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -200,170 +196,6 @@
         </div>
     </section>
 
-    <!-- NOTES -->
-    <section id="notes">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-eyebrow">Study Material</span>
-                <h2 class="section-title">Quick Reference Notes</h2>
-                <p class="section-desc">Essential concepts explained clearly for ECE students. Tap any topic to expand.
-                </p>
-            </div>
-
-            <div class="notes-grid">
-
-                <!-- Note 1 -->
-                <div class="note-card">
-                    <div class="note-toggle" role="button" tabindex="0" aria-expanded="false">
-                        <div class="note-toggle-left">
-                            <div class="note-icon blue">S/V</div>
-                            <div>
-                                <div class="note-title">Scalars vs Vectors</div>
-                                <div class="note-subtitle">Magnitude only vs magnitude + direction</div>
-                            </div>
-                        </div>
-                        <svg class="note-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2.5">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </div>
-                    <div class="note-body">
-                        <h4>What is a Scalar?</h4>
-                        <p>A scalar quantity has <strong>magnitude only</strong>, with no direction. Most electrical
-                            quantities you measure with a multimeter are scalars.</p>
-                        <ul>
-                            <li>Voltage (V), Current (I), Resistance (R), Power (P)</li>
-                            <li>Temperature, Frequency, Capacitance, Energy</li>
-                            <li>Represented as a single number: Q = 5 uC</li>
-                        </ul>
-                        <h4>What is a Vector?</h4>
-                        <p>A vector has both <strong>magnitude AND direction</strong> in space. Critical in EM field
-                            theory and antenna analysis.</p>
-                        <ul>
-                            <li>Electric Field <strong>E</strong>, Magnetic Field <strong>B</strong>, Force
-                                <strong>F</strong>
-                            </li>
-                            <li>Poynting Vector <strong>S</strong>, Current Density <strong>J</strong></li>
-                            <li>Represented as: <strong>v</strong> = [vx, vy] with magnitude |v| = sqrt(vx^2 + vy^2)
-                            </li>
-                        </ul>
-                        <div class="formula-box">
-                            Scalar: Q = 1.5 uC (no direction needed)
-                            Vector: E = [3, 2] V/m, |E| = sqrt(9+4) = 3.6 V/m
-                            Force: F = Q x E (scalar x vector = vector)
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Note 2 -->
-                <div class="note-card">
-                    <div class="note-toggle" role="button" tabindex="0" aria-expanded="false">
-                        <div class="note-toggle-left">
-                            <div class="note-icon green">V+</div>
-                            <div>
-                                <div class="note-title">Vector Operations</div>
-                                <div class="note-subtitle">Addition, subtraction, dot product, cross product</div>
-                            </div>
-                        </div>
-                        <svg class="note-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2.5">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </div>
-                    <div class="note-body">
-                        <h4>Vector Addition / Subtraction</h4>
-                        <p>Add or subtract component-wise. The result is always a <strong>vector</strong>.</p>
-                        <div class="formula-box">
-                            A = [1, 2, 3], B = [4, 5, 6]
-                            A + B = [5, 7, 9] (Vector result)
-                            A - B = [-3, -3, -3] (Vector result)
-                            Scalar x A = 2 x [1,2,3] = [2, 4, 6]
-                        </div>
-                        <h4>Dot Product (Scalar result)</h4>
-                        <p>A . B = Ax*Bx + Ay*By. Result is a <strong>scalar</strong>. Used to find angle between
-                            vectors.</p>
-                        <div class="formula-box">
-                            A . B = (1x4) + (2x5) = 4+10 = 14 (Scalar)
-                            cos(theta) = (A.B) / (|A||B|)
-                        </div>
-                        <h4>Cross Product (Vector result)</h4>
-                        <p>A x B gives a vector <strong>perpendicular</strong> to both. Essential in 3D EM fields.</p>
-                    </div>
-                </div>
-
-                <!-- Note 3 -->
-                <div class="note-card">
-                    <div class="note-toggle" role="button" tabindex="0" aria-expanded="false">
-                        <div class="note-toggle-left">
-                            <div class="note-icon orange">KL</div>
-                            <div>
-                                <div class="note-title">Kirchhoff's Laws</div>
-                                <div class="note-subtitle">KVL: Sum(V)=0 | KCL: Sum(I_in) = Sum(I_out)</div>
-                            </div>
-                        </div>
-                        <svg class="note-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2.5">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </div>
-                    <div class="note-body">
-                        <h4>Kirchhoff's Voltage Law (KVL)</h4>
-                        <p>The algebraic sum of all voltages around any <strong>closed loop</strong> is zero. Energy is
-                            conserved.</p>
-                        <div class="formula-box">
-                            Sum(V) = 0 (around any closed loop)
-                            Vs - V1 - V2 - V3 = 0
-                            I = Vs / (R1 + R2 + R3)
-                            V1 = I*R1, V2 = I*R2, V3 = I*R3
-                        </div>
-                        <h4>Kirchhoff's Current Law (KCL)</h4>
-                        <p>The sum of currents entering a node equals the sum leaving. Charge is conserved.</p>
-                        <div class="formula-box">
-                            Sum(I_in) = Sum(I_out) (at any node)
-                            I1 + I2 = I3 (example node)
-                            Node voltage: Vn = (G1*V1 + G2*V2 + G3*V3) / (G1+G2+G3)
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Note 4 -->
-                <div class="note-card">
-                    <div class="note-toggle" role="button" tabindex="0" aria-expanded="false">
-                        <div class="note-toggle-left">
-                            <div class="note-icon purple">DS</div>
-                            <div>
-                                <div class="note-title">Discrete Signals</div>
-                                <div class="note-subtitle">Sampling theory and array operations</div>
-                            </div>
-                        </div>
-                        <svg class="note-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2.5">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </div>
-                    <div class="note-body">
-                        <h4>Discrete vs Continuous Signals</h4>
-                        <p>A <strong>continuous signal</strong> has values at every instant of time. A <strong>discrete
-                                signal</strong> exists only at specific sample points n = 0, 1, 2, ...</p>
-                        <ul>
-                            <li>Discrete signal: x[n] defined at integer indices</li>
-                            <li>Obtained by sampling continuous x(t) at rate fs</li>
-                            <li>Nyquist Theorem: fs >= 2 x fmax to avoid aliasing</li>
-                        </ul>
-                        <h4>Array Operations</h4>
-                        <div class="formula-box">
-                            x1[n] = [4, 7, 2], x2[n] = [2, 3, 7]
-                            Addition: x1 + x2 = [6, 10, 9]
-                            Subtraction: x1 - x2 = [2, 4, -5]
-                            Multiplication: x1 * x2 = [8, 21, 14]
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- end notes-grid -->
-        </div>
-    </section>
-
     <!-- RESOURCES -->
     <section id="resources">
         <div class="container">
@@ -375,13 +207,7 @@
             </div>
 
             <div class="resources-grid">
-                <a href="https://numpy.org/doc/" target="_blank" rel="noopener noreferrer" class="resource-card">
-                    <div class="resource-icon" style="background:rgba(77,171,74,0.1)">NP</div>
-                    <div class="resource-name">NumPy Documentation</div>
-                    <div class="resource-desc">Official docs for the NumPy library. Arrays, linear algebra, FFT, and
-                        more.</div>
-                    <div class="resource-link">Visit site &rarr;</div>
-                </a>
+
                 <a href="https://matplotlib.org/stable/tutorials/" target="_blank" rel="noopener noreferrer"
                     class="resource-card">
                     <div class="resource-icon" style="background:rgba(37,99,235,0.1)">MPL</div>
@@ -443,7 +269,7 @@
                     <ul>
                         <li><a href="#installation">Installation Guide</a></li>
                         <li><a href="#programs">Python Programs</a></li>
-                        <li><a href="#notes">Study Notes</a></li>
+
                         <li><a href="#resources">Resources</a></li>
                     </ul>
                 </div>
@@ -462,7 +288,7 @@
             </div>
 
             <div class="footer-bottom">
-                <span>&copy; 2025 Linear Algebra Lab</span>
+                <span>&copy; 2026 Linear Algebra Lab</span>
                 <span>v1.0 &nbsp;|&nbsp; <a href="https://github.com/" target="_blank" rel="noopener">GitHub
                         Repository</a> &nbsp;|&nbsp; Hosted on GitHub Pages</span>
             </div>
@@ -943,6 +769,5 @@ print(f"x1*x2       = {list(mul.astype(int))}")
         }
     </script>
 </body>
-
 
 </html>
